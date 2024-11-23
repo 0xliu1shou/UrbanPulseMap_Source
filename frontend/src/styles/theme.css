@@ -1,0 +1,49 @@
+/* src/styles/theme.css */
+
+/* 引入自定义字体文件 */
+@import './fontsheet.css';
+@font-face {
+  font-family: 'GLGB';
+  src: url('@/assets/fonts/GLGB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* 主要配色 */
+  --primary-color: #bd6c73;            /* 主色调 */
+  --secondary-color: #2e365a;          /* 深色 */
+  --background-color: #6b597f;         /* 背景色 */
+  --background-light: #edeae2;         /* 浅背景色 */
+  --highlight-color: #92a1c2;          /* 强调色 */
+  --accent-color-1: #a2869c;           /* 辅助色1 */
+  --accent-color-2: #3f5b8d;           /* 辅助色2 */
+
+  /* 字体颜色 */
+  --font-color-light: #ffffff;         /* 文字亮色 */
+  --font-color-dark: #000000;          /* 文字暗色 */
+
+  /* 渐变色 */
+  --gradient-secondary-background: linear-gradient(135deg, #2e365a, #6b597f); /* 深色到背景色 */
+  --gradient-background-primary: linear-gradient(135deg, #6b597f, #bd6c73); /* 背景色到主色调 */
+  --gradient-secondary-highlight: linear-gradient(135deg, #2e365a, #92a1c2); /* 深色到强调色 */
+  --gradient-accent: linear-gradient(135deg, #a2869c, #3f5b8d);               /* 辅助色1到辅助色2 */
+  --gradient-accent-2: linear-gradient(135deg, #bd6c73, #6b507f);
+}
+
+/* 全局字体和背景设置 */
+body {
+  font-family: 'Shentox', sans-serif; /* 设置全局默认字体 */
+  color: var(--font-color-light);     /* 使用亮色字体 */
+  background: var(--background-color); /* 使用背景色 */
+}
+
+/* 全局样式重置 */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
