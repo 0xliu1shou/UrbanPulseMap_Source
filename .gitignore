@@ -1,0 +1,8 @@
+node_modules/
+env/
+*.pyc
+__pycache__/
+.vscode/
+.idea/
+.DS_Store
+__MACOSX/
