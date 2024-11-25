@@ -65,8 +65,8 @@ sudo ./set_timezone.sh
 ## 部署upmap
 ```bash
 cd UrbanPulseMap_Source/deploy
-chmod +x deploy.sh
-sudo ./deploy.sh
+chmod +x deploy_upmap.sh
+sudo ./deploy_upmap.sh
 ```
 
 ### 部署ssl证书
