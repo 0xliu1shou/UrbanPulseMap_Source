@@ -56,6 +56,7 @@ git clone https://github.com/0xliu1shou/UrbanPulseMap_Source
 
 ## 设置时区
 ```bash
+cd UrbanPulseMap_Source/deploy
 chmod +x set_timezone.sh
 sudo ./set_timezone.sh
 ```
