@@ -10,3 +10,19 @@ net:
   bindIp: 127.0.0.1,< 您的内网 ip 地址 >
   port: 27017
 7、如果您有安全需求，可以自行更改 MongoDB 的监听端口，或者为服务器配置防火墙仅允许您自己的 ip 地址源通过公网访问 MongoDB URI 端口。
+
+
+# UrbanPulseMap 部署指南
+
+## 克隆代码仓库
+
+```bash
+git clone https://github.com/0xliu1shou/UrbanPulseMap_Source
+sudo ./deploy.sh
+
+# 部署前的准备工作
+
+##	1.	注册域名并解析到服务器 IP 地址
+请确保您已注册域名，并正确将域名解析指向服务器的 IP 地址。
+##	2.	部署 SSL 证书
+请确保域名和服务器已部署 SSL 证书，您可以使用 certbot 工具：
