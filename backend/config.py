@@ -1,5 +1,5 @@
 # backend/config.py
-# 集中管理后端全部配置
+# 集中管理后端全部配置，目前仅有 Mongo URI
 import os
 
 class Config:

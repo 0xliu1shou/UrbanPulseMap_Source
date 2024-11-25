@@ -1,4 +1,5 @@
-// src/store/dataFormatter.js
+// ./frontend/src/store/dataFormatter.js
+// 用于格式化 API 返回的数据为人类可读的形式，供前端展示
 /**
  * DataFormatter.js
  * 用于格式化 API 返回的数据，将 geo 数组解构成 location, latitude, 和 longitude。

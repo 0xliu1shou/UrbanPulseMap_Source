@@ -1,5 +1,5 @@
-<!-- src/components/map/MapNewsPanel.vue -->
-<!-- 地图新闻面板，MapView下的子组件，负责接收MapContainer点击事件传递回父组件的某地图标记上的事件，再传递给MapNewsItem进行展示 -->
+<!-- ./frontend/src/components/map/MapNewsPanel.vue -->
+<!-- 地图新闻面板，MapView 下的子组件，负责接收 MapContainer 点击事件传递回父组件的某地图标记上的事件，再传递给 MapNewsItem 进行展示 -->
 <template>
   <div class="map-panel-content">
     <h3 class="map-panel-title">Eventos Locais</h3>

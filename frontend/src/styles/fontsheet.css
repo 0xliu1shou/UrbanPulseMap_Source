@@ -1,3 +1,5 @@
+/* ./frontend/src/styles/fontsheet.css */
+/* 字体定义文件，供 theme.css 调用定义全局字体 */
 @font-face {
     font-family: 'Shentox';
     src: url('@/assets/fonts/Shentox-Light.eot');

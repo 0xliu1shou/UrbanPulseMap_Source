@@ -1,3 +1,6 @@
+# ./backend/scheduler/scheduler.py
+# 定时调度文件，每半小时调度执行一次爬虫和nlp数据处理脚本
+
 import subprocess
 import time
 from datetime import datetime

@@ -1,5 +1,5 @@
-<!-- src/components/map/TotalNewsPanel.vue -->
-<!-- 全部新闻面板，MapView下的子组件，负责将从父组件获得的数据传递给TotalNewsItem组件进行展示 --> 
+<!-- ./frontend/src/components/map/TotalNewsPanel.vue -->
+<!-- 全部新闻面板，MapView下的子组件，负责将从父组件获得的数据传递给 TotalNewsItem 组件进行展示 --> 
 <template>
   <div class="total-news-panel-content">
     <h3 class="total-news-panel-title">Aconteceu Hoje</h3>

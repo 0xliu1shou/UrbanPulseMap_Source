@@ -1,3 +1,6 @@
+# ./backend/scraper/utils/data_utils.py
+# 爬虫工具文件，提供爬虫工作需要的获取、解析、封装、存储等模块化方法函数，供爬虫脚本调用
+
 import feedparser
 import time
 import logging

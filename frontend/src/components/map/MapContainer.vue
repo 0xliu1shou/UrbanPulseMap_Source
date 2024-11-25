@@ -1,5 +1,5 @@
-<!-- src/components/map/MapContainer.vue -->
-<!-- 地图容器，为MapView下的子组件，负责将从父组件获取的数据用地图标记的方式进行展示，并提供点击地图标记传递该标记上的新闻回父组件功能 -->
+<!-- ./frontend/src/components/map/MapContainer.vue -->
+<!-- 地图容器，为 MapView 下的子组件，负责将从父组件获取的数据用地图标记的方式进行展示，并提供点击地图标记传递该标记上的新闻回父组件功能 -->
 <template>
   <div id="map-container">
     <!-- 地图容器，调用Indicators中的地图标记部件 -->
@@ -20,13 +20,6 @@ import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import Indicators from "./items/Indicators.vue";
 import BaseButton from "@/components/common/BaseButton.vue";
-
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-});
 
 export default {
   name: "MapContainer",
