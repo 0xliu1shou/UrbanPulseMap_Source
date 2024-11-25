@@ -57,7 +57,9 @@ fi
 echo "更新系统并安装必要的软件..."
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install -y python3.12 python3-venv python3-pip nodejs npm mongodb-org-shell screen
+sudo apt-get install -y python3.12 python3-pip nodejs mongodb-org-shell screen
+sudo apt-get install -y python3-venv
+sudo apt-get install -y npm
 
 # 2. 设置 MongoDB 服务
 echo "配置 MongoDB..."
