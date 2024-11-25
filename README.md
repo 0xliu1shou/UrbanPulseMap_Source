@@ -62,17 +62,17 @@ sudo ./set_timezone.sh
 ```
 重启服务器
 
+### 部署ssl证书
+```bash
+chmod +x set_ssl.sh
+sudo ./set_ssl.sh
+```
+
 ## 部署upmap
 ```bash
 cd UrbanPulseMap_Source/deploy
 chmod +x deploy_upmap.sh
 sudo ./deploy_upmap.sh
-```
-
-### 部署ssl证书
-```bash
-chmod +x set_ssl.sh
-sudo ./set_ssl.sh
 ```
 
 ## 设置文件符上限
