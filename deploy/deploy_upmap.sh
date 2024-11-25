@@ -65,13 +65,32 @@ echo "配置 MongoDB..."
 if ! command -v mongod &>/dev/null; then
     echo "MongoDB 未安装，正在安装 MongoDB..."
 
-    # 使用支持的 Ubuntu 版本代号（如 jammy）
-    wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo tee /etc
-    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+    # 确保 apt 已更新
+    echo "更新系统软件包索引..."
+    sudo apt update -y
 
-    # 更新软件包索引并安装 MongoDB
+    # 添加 MongoDB 官方密钥
+    echo "添加 MongoDB 官方 GPG 密钥..."
+    wget -qO - https://pgp.mongodb.com/server-6.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-org-6.0.gpg
+    if [ $? -ne 0 ]; then
+        echo "添加 MongoDB 官方密钥失败，请检查网络连接。"
+        exit 1
+    fi
+    # 添加 MongoDB 官方仓库
+    echo "添加 MongoDB 官方软件源..."
+    OS_VERSION="jammy"  # 替换为适合您的版本（如 jammy 对应 Ubuntu 22.04）
+    echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-org-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu $OS_VERSION/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+    # 更新软件包索引
     sudo apt-get update
-    sudo apt-get install -y mongodb-org
+
+    # 安装 MongoDB
+    echo "安装 MongoDB..."
+    sudo apt install -y mongodb-org
+    if [ $? -ne 0 ]; then
+        echo "MongoDB 安装失败，请检查软件源配置或网络连接。"
+        exit 1
+    fi
 
     # 检查安装结果
     if ! command -v mongod &>/dev/null; then
