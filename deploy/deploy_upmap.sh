@@ -23,7 +23,6 @@ if ! sudo -n true 2>/dev/null; then
 fi
 
 # 询问用户输入变量
-# 询问用户输入变量
 read -p "请输入您的域名 (例如: upmap.cc): " DOMAIN
 if [ -z "$DOMAIN" ]; then
     echo "域名不能为空，请重新运行脚本并输入有效的域名。"
@@ -56,17 +55,32 @@ fi
 
 # 1. 更新系统并安装必要软件
 echo "更新系统并安装必要的软件..."
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install -y nginx python3.12 python3.12-venv python3.12-pip nodejs npm mongodb-clients screen
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install -y python3.12 python3-venv python3-pip nodejs npm mongodb-org-shell screen
 
 # 2. 设置 MongoDB 服务
 echo "配置 MongoDB..."
-# 检查 MongoDB 服务是否已安装
-if ! systemctl list-unit-files | grep -q mongod; then
-    echo "MongoDB 服务未安装或服务名称不匹配，请检查安装步骤。"
-    exit 1
+# 检查是否已经安装 MongoDB
+if ! command -v mongod &>/dev/null; then
+    echo "MongoDB 未安装，正在安装 MongoDB..."
+
+    # 使用支持的 Ubuntu 版本代号（如 jammy）
+    wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo tee /etc
+
+    # 更新软件包索引并安装 MongoDB
+    sudo apt-get update
+    sudo apt-get install -y mongodb-org
+
+    # 检查安装结果
+    if ! command -v mongod &>/dev/null; then
+        echo "MongoDB 安装失败，请检查网络连接或安装过程。"
+        exit 1
+    fi
 fi
+# 启用并启动 MongoDB 服务
+sudo systemctl enable mongod
+sudo systemctl start mongod
 # 检查 MongoDB 配置文件
 MONGODB_CONF="/etc/mongod.conf"
 if [ ! -f "$MONGODB_CONF" ]; then
@@ -87,8 +101,7 @@ if [[ "$CUSTOM_BIND_IP" =~ ^[yY]$ ]]; then
 else
     echo "保持默认 MongoDB 监听地址 127.0.0.1"
 fi
-# 启用并启动 MongoDB 服务
-sudo systemctl enable mongod
+# 重启 MongoDB 服务
 sudo systemctl restart mongod
 # 检查 MongoDB 服务状态
 echo "检查 MongoDB 服务状态..."
