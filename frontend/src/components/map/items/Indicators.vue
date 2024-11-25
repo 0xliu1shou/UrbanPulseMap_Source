@@ -1,5 +1,5 @@
-<!-- src/components/map/items/Indicators.vue -->
-<!-- 地图标记工具，用于提供单一标记和聚合标记的生成与工作方法，供MapContainer调用 -->
+<!-- ./frontend/src/components/map/items/Indicators.vue -->
+<!-- 地图标记工具，用于提供单一标记和聚合标记的生成与工作方法，供 MapContainer 调用 -->
 <template>
   <div>
     <!-- Indicator.vue 不直接渲染内容，只提供单一标记和聚合标记的逻辑 -->

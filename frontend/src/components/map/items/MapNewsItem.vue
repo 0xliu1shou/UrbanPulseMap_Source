@@ -1,5 +1,5 @@
-<!-- src/components/map/items/MapNewsItem.vue -->
-<!-- 地图新闻组件，为MapNewsPanel子组件，负责将父组件传递过来的点击事件的数据逐一展示 -->
+<!-- ./frontend/src/components/map/items/MapNewsItem.vue -->
+<!-- 地图新闻组件，为 MapNewsPanel 子组件，负责将父组件传递过来的点击事件的数据逐一展示 -->
 <template>
   <li class="map-news-item">
     <!-- 使用 v-html 渲染 HTML 格式的标题内容 -->

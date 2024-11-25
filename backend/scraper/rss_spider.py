@@ -1,3 +1,7 @@
+# ./backend/scraper/rss_spider.py
+# RSS 源爬虫脚本，调用 data_utils 以从 RSS 新闻源爬取新闻数据
+
+
 import os
 import sys
 from datetime import datetime

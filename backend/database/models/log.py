@@ -1,5 +1,8 @@
+# ./backend/database/models/log.py
+# 数据库 logs 集合 CRUD 方法文件，供其他模块调用操作数据库
+
 from datetime import datetime
-from backend.database.config import db_connection  # 导入数据库连接配置
+from backend.database.connection import db_connection  # 导入数据库连接配置
 
 
 class LogModel:

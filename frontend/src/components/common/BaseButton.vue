@@ -1,6 +1,7 @@
-<!-- src/components/common/BaseButton.vue -->
+<!-- ./frontend/src/components/common/BaseButton.vue -->
+<!-- 基本按钮组件，负责提供可点击的按钮部件和样式供全局调用 -->
 <template>
-  <!-- 按钮元素，按钮的点击事件会通过 $emit 传递给父组件 -->
+  <!-- 按钮元素，按钮的点击事件会通过 handleClick 传递给父组件 -->
   <button :class="buttonClass" @click="handleClick" :disabled="disabled">
     <slot></slot> <!-- 插槽内容，父组件可以插入自定义文本或元素 -->
   </button>

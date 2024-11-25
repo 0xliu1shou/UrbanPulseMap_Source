@@ -1,5 +1,5 @@
-<!-- src/views/MapView.vue -->
-<!-- 地图页面父组件，负责从vuex获取格式化后的最近24小时数据，并在各子组件之间传递，另有加载页面功能 -->
+<!-- ./frontend/src/views/MapView.vue -->
+<!-- 地图页面父组件，负责从 vuex 获取格式化后的最近24小时数据，并在各子组件之间传递，另有加载页面功能 -->
 <template>
   <div class="map-view">
     <!-- 左半部分 -->

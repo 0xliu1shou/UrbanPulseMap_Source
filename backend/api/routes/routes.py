@@ -1,8 +1,10 @@
-# api/script/routes.py
+# ./backend/api/routes/routes.py
+# Flask API 的路由文件
+
 from flask import Blueprint, jsonify, request
 from collections import OrderedDict
 from backend.database.models.news import news_model
-from backend.database.models.log import log_model  # 导入 log_model 用于日志读取
+from backend.database.models.log import log_model
 
 api_bp = Blueprint('api', __name__)
 admin_bp = Blueprint('admin', __name__)

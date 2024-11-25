@@ -1,5 +1,6 @@
-# database/config.py
-# MongoDB 连接配置
+# ./backend/database/connection.py
+# MongoDB 连接配置，供数据库 models 调用以连接数据库
+
 from pymongo import MongoClient
 from backend.config import Config  # 从集中配置文件导入MongoDB URI
 

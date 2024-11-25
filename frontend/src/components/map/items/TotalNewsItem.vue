@@ -1,5 +1,5 @@
-<!-- src/components/map/items/TotalNewsItem.vue -->
-<!-- 全部新闻组件，为TotalNewsPanel下的子组件，负责将父组件传递过来的新闻事件逐一展示 -->
+<!-- ./frontend/src/components/map/items/TotalNewsItem.vue -->
+<!-- 全部新闻组件，为 TotalNewsPanel 下的子组件，负责将父组件传递过来的新闻事件逐一展示 -->
 <template>
   <li class="total-news-item">
     <!-- 使用 v-html 渲染截断后的标题内容 -->

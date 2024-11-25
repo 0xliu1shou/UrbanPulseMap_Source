@@ -1,4 +1,5 @@
-/* src/styles/theme.css */
+/* ./frontend/src/styles/fontsheet.css */
+/* 全局样式定义文件 */
 
 /* 引入自定义字体文件 */
 @import './fontsheet.css';

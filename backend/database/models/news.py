@@ -1,5 +1,8 @@
+# ./backend/database/models/news.py
+# 数据库 news 集合 CRUD 方法文件，供其他模块调用操作数据库
+
 from bson import ObjectId  # 用于处理 MongoDB 的 ObjectId
-from backend.database.config import db_connection  # 从配置文件导入数据库连接配置
+from backend.database.connection import db_connection  # 从配置文件导入数据库连接配置
 from pymongo import UpdateOne  # 用于批量操作中的单个更新操作
 
 class NewsModel:

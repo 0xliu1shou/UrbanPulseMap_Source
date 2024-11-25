@@ -1,4 +1,5 @@
-// src/router/index.js
+// ./frontend/src/router/index.js
+// vue 路由文件
 import { createRouter, createWebHistory } from 'vue-router';
 
 // 导入页面组件
