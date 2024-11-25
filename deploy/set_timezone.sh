@@ -6,10 +6,6 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
-# 显示可用时区
-echo "以下是可用的时区列表："
-timedatectl list-timezones
-
 # 提示用户输入时区
 read -p "请输入要设置的时区（例如：Asia/Shanghai）： " timezone
 
