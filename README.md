@@ -44,14 +44,46 @@ net:
 	•	请以 root 权限 或通过 sudo 执行脚本。
 	•	部署完成后，访问 https://<您的域名> 检查服务是否正常运行。
 
+
+
+# 部署步骤
+
 ## 克隆代码仓库
 
 ```bash
 git clone https://github.com/0xliu1shou/UrbanPulseMap_Source
 ```
 
-## 运行部署脚本
+## 设置时区
 ```bash
-cd UrbanPulseMap_Source
+chmod +x set_timezone.sh
+sudo ./set_timezone.sh
+```
+重启服务器
+
+## 部署upmap
+```bash
+cd UrbanPulseMap_Source/deploy
+chmod +x deploy.sh
 sudo ./deploy.sh
+```
+
+### 部署ssl证书
+```bash
+chmod +x set_ssl.sh
+sudo ./set_ssl.sh
+```
+
+## 设置文件符上限
+```bash
+chmod +x set_fd_limit.sh
+sudo ./set_fd_limit.sh
+```
+重启服务器
+
+## 验证部署情况
+```bash
+cd UrbanPulseMap_Source/deploy
+chmod +x validate_deployment.sh
+sudo ./validate_deployment.sh
 ```
