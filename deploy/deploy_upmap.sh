@@ -67,7 +67,7 @@ if ! command -v mongod &>/dev/null; then
 
     # 确保 apt 已更新
     echo "更新系统软件包索引..."
-    sudo apt update -y
+    sudo apt-get update -y
 
     # 添加 MongoDB 官方密钥
     echo "添加 MongoDB 官方 GPG 密钥..."
@@ -86,7 +86,7 @@ if ! command -v mongod &>/dev/null; then
 
     # 安装 MongoDB
     echo "安装 MongoDB..."
-    sudo apt install -y mongodb-org
+    sudo apt-get install -y mongodb-org
     if [ $? -ne 0 ]; then
         echo "MongoDB 安装失败，请检查软件源配置或网络连接。"
         exit 1
