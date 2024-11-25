@@ -14,5 +14,8 @@ if timedatectl list-timezones | grep -q "^$timezone$"; then
   # 设置时区
   echo "正在设置时区为 $timezone ..."
   timedatectl set-timezone "$timezone"
-
-echo "时区设置完成！请重启服务器！"
+  echo "时区设置完成！请重启服务器"
+else
+  echo "输入的时区无效，请重新运行脚本并输入正确的时区。"
+  exit 1
+fi

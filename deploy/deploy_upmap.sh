@@ -67,6 +67,7 @@ if ! command -v mongod &>/dev/null; then
 
     # 使用支持的 Ubuntu 版本代号（如 jammy）
     wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo tee /etc
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 
     # 更新软件包索引并安装 MongoDB
     sudo apt-get update
@@ -102,6 +103,7 @@ else
     echo "保持默认 MongoDB 监听地址 127.0.0.1"
 fi
 # 重启 MongoDB 服务
+sudo systemctl enable mongod
 sudo systemctl restart mongod
 # 检查 MongoDB 服务状态
 echo "检查 MongoDB 服务状态..."
