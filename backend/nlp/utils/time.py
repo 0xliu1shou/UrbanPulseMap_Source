@@ -46,7 +46,7 @@ def extract_time(doc, news_id):
                 try:
                     # 尝试将 publication_date 转换为 datetime 对象
                     extracted_time = date_parser.parse(publication_date, fuzzy=True)
-                    logging.info(f"Using publication_date from database as fallback: {extracted_time}")
+                    logging.debug(f"Using publication_date from database as fallback: {extracted_time}")
                 except Exception as e:
                     logging.error(f"Error parsing publication_date '{publication_date}': {e}")
             else:
