@@ -32,17 +32,17 @@ chmod +x setEnvironment.sh
 sudo ./setEnvironment.sh
 ```
 
-## 6. 修改配置文件
+### 6. 部署 ssl 证书
+```bash
+chmod +x setSsl.sh
+sudo ./setSsl.sh
+```
+
+## 7. 修改配置文件
 ### 修改 vite.config.js、Nginx 以及前端 API 地址的 Config.js 配置文件
 ```bash
 chmod +x setConfig.sh
 sudo ./setConfig.sh
-```
-
-### 7. 部署 ssl 证书
-```bash
-chmod +x setSsl.sh
-sudo ./setSsl.sh
 ```
 
 ### 8. 创建前端静态文件
