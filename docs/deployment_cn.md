@@ -61,5 +61,5 @@ sudo ./setFdLimit.sh
 ## 10. 验证部署情况
 ```bash
 cd UrbanPulseMap_Source/deploy
-sudo ./check.sh
+sudo bash ./check.sh
 ```
