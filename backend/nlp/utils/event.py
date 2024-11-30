@@ -1,3 +1,5 @@
+# ./backend/nlp/utils/event.py
+# 用预训练模型处理新闻文本并提取新闻事件关键词
 import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))

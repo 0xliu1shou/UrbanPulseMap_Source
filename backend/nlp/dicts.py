@@ -1,6 +1,5 @@
-# event_location_dicts.py
-
-# 自定义事件类型词典
+# ./backend/nlp/dicts.py
+# 自定义事件类型词典和地点名称词典
 LABEL_TO_EVENT_TYPE = {
  'label_0': 'incentive',
  'label_1': 'greve', 

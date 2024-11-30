@@ -1,3 +1,5 @@
+# ./backend/nlp/utils/loc.py
+# 用预训练模型处理并提取新闻中的地点关键词，返回地点和经纬度
 import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))

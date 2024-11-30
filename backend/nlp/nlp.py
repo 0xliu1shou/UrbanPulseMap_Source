@@ -1,4 +1,5 @@
-# news_analyzer_optimized.py
+# ./backend/nlp/nlp.py
+# 主代码，提取数据库中的news合集，调用事件、地点、时间提取的结果并更新到数据库
 import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
