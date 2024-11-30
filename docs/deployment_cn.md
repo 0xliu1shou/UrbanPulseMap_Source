@@ -54,7 +54,6 @@ sudo ./setWebsite.sh
 ## 9. 设置文件符上限
 ### MongoDB 需要大量文件描述符用于管理连接和文件。如果文件描述符上限过低，可能会导致 MongoDB 连接中断。请确保系统文件描述符的限制至少为 64000。
 ```bash
-chmod +x setFdLimit.sh
 sudo ./setFdLimit.sh
 ```
 ### 重启服务器
