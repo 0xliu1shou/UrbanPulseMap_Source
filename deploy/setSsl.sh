@@ -1,4 +1,4 @@
-#!/bin/bash
+# setSsl.sh
 
 # 检查是否以 root 权限运行
 if [ "$(id -u)" -ne 0 ]; then
@@ -14,7 +14,7 @@ apt update && apt install -y software-properties-common
 echo "正在安装 Certbot 和 Nginx 插件..."
 add-apt-repository -y universe
 add-apt-repository -y ppa:certbot/certbot
-apt update && apt install -y certbot python3-certbot-nginx
+sudo apt install -y certbot python3-certbot-nginx
 
 # 提示用户输入域名
 read -p "请输入您的域名（例如 example.com）: " domain
@@ -57,4 +57,4 @@ systemctl enable certbot.timer
 systemctl start certbot.timer
 
 # 提示部署完成
-echo "免费 SSL 证书已成功部署！请访问 https://$domain 检查。"
+echo "免费 SSL 证书已成功部署！请 sudo certbot certificates 检查。"

@@ -1,14 +1,10 @@
-#!/bin/bash
+# check.sh
 
 # 检查是否以 root 权限运行
 if [ "$(id -u)" -ne 0 ]; then
   echo "请以 root 权限运行此脚本。"
   exit 1
 fi
-
-# 日志文件路径
-LOG_FILE="/var/log/deployment_validation.log"
-exec > >(tee -i "$LOG_FILE") 2> >(tee -i "$LOG_FILE" >&2)
 
 echo "开始验证部署状态..."
 
@@ -144,7 +140,21 @@ else
   echo "❌ Nginx 日志目录不存在，请检查 Nginx 是否正确安装。"
 fi
 
+# 9. 检查系统时区
+echo "检查系统时区..."
+CURRENT_TIMEZONE=$(timedatectl | grep "Time zone" | awk '{print $3}')
+if [ -z "$CURRENT_TIMEZONE" ]; then
+  echo "❌ 无法检测到系统时区，请检查系统配置。"
+else
+  echo "✅ 当前系统时区为: $CURRENT_TIMEZONE"
+  # 如果需要，可以添加时区建议或校验逻辑
+  RECOMMENDED_TIMEZONE="UTC"
+  if [ "$CURRENT_TIMEZONE" != "$RECOMMENDED_TIMEZONE" ]; then
+    echo "⚠️ 建议将系统时区设置为 $RECOMMENDED_TIMEZONE。"
+    echo "  设置时区命令: sudo timedatectl set-timezone $RECOMMENDED_TIMEZONE"
+  fi
+fi
+
 # 总结
 echo "----------------------------------------"
 echo "验证已完成，请根据以上结果检查配置并修复可能存在的问题。"
-echo "日志文件已保存至 $LOG_FILE。"

@@ -2,7 +2,7 @@
 // 创建 Vuex 的 state，分别是原始数据、格式化后的全部数据、格式化后的最近24小时数据，并预先按时间顺序倒叙，以供前端组件相互传递调用，数据单位为 event
 
 import { createStore } from 'vuex';
-import dataFormatter from './src/store/dataFormatter';
+import dataFormatter from '@/store/dataFormatter';
 import axios from 'axios'; // 引入 axios，获取config中设置的 api 链接
 
 /**
