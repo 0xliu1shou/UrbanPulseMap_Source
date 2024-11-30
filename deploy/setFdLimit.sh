@@ -1,4 +1,4 @@
-#!/bin/bash
+# setFdLimit.sh
 
 # 检查是否以 root 权限运行
 if [ "$(id -u)" -ne 0 ]; then
