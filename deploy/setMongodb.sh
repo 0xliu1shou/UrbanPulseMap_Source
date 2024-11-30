@@ -1,7 +1,8 @@
-# setMongodb.sh
+#!/bin/bash
 
 # 设置 MongoDB 服务
 echo "配置 MongoDB..."
+
 # 检查是否已经安装 MongoDB
 if ! command -v mongod &>/dev/null; then
     echo "MongoDB 未安装，正在安装 MongoDB..."
@@ -13,10 +14,19 @@ if ! command -v mongod &>/dev/null; then
         echo "添加 MongoDB 官方密钥失败，请检查网络连接。"
         exit 1
     fi
+
     # 添加 MongoDB 官方仓库
     echo "添加 MongoDB 官方软件源..."
-    OS_VERSION="jammy"  # 替换为适合您的版本（如 jammy 对应 Ubuntu 22.04）
+    OS_VERSION=$(lsb_release -cs)  # 动态获取系统版本
     echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-org-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu $OS_VERSION/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+    # 更新系统包缓存
+    echo "更新系统包缓存..."
+    sudo apt-get update
+    if [ $? -ne 0 ]; then
+        echo "系统包缓存更新失败，请检查软件源配置或网络连接。"
+        exit 1
+    fi
 
     # 安装 MongoDB
     echo "安装 MongoDB..."
@@ -32,15 +42,19 @@ if ! command -v mongod &>/dev/null; then
         exit 1
     fi
 fi
+
 # 启用并启动 MongoDB 服务
+echo "启用并启动 MongoDB 服务..."
 sudo systemctl enable mongod
-sudo systemctl start mongod
+sudo systemctl restart mongod
+
 # 检查 MongoDB 配置文件
 MONGODB_CONF="/etc/mongod.conf"
 if [ ! -f "$MONGODB_CONF" ]; then
     echo "MongoDB 配置文件 $MONGODB_CONF 不存在，请检查 MongoDB 是否正确安装。"
     exit 1
 fi
+
 # 询问用户是否需要自定义监听 IP
 read -p "是否需要自定义 MongoDB 监听地址 (y/n)? " CUSTOM_BIND_IP
 if [[ "$CUSTOM_BIND_IP" =~ ^[yY]$ ]]; then
@@ -65,7 +79,7 @@ if [[ "$CUSTOM_BIND_IP" =~ ^[yY]$ ]]; then
     echo "更新 MongoDB 配置以监听地址: $NEW_BIND_IP"
 
     # 备份配置文件
-    cp "$MONGODB_CONF" "$MONGODB_CONF.bak"
+    sudo cp "$MONGODB_CONF" "$MONGODB_CONF.bak"
 
     # 更新配置文件
     sudo sed -i "s/^  bindIp:.*/  bindIp: $NEW_BIND_IP/" "$MONGODB_CONF"
@@ -76,9 +90,21 @@ if [[ "$CUSTOM_BIND_IP" =~ ^[yY]$ ]]; then
 else
     echo "保持默认 MongoDB 监听地址 127.0.0.1"
 fi
+
 # 重启 MongoDB 服务
-sudo systemctl enable mongod
+echo "重启 MongoDB 服务..."
 sudo systemctl restart mongod
+if [ $? -ne 0 ]; then
+    echo "MongoDB 服务启动失败，请检查日志。"
+    exit 1
+fi
+
 # 检查 MongoDB 服务状态
 echo "检查 MongoDB 服务状态..."
 sudo systemctl status mongod --no-pager
+if [ $? -eq 0 ]; then
+    echo "MongoDB 服务已成功启动！"
+else
+    echo "MongoDB 服务启动失败，请检查日志。"
+    exit 1
+fi
