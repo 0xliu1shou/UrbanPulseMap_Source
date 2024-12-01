@@ -1,3 +1,4 @@
+#!/bin/bash
 # check.sh
 
 # 检查是否以 root 权限运行

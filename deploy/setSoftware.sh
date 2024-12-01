@@ -1,3 +1,4 @@
+#!/bin/bash
 # setSoftware.sh
 
 # 更新系统并安装必要软件
@@ -11,4 +12,5 @@ sudo apt-get install -y npm
 sudo apt-get install -y nodejs
 sudo apt-get install -y mongodb-org-shell
 sudo apt-get install -y screen
+sudo apt install -y nginx
 sudo apt-get update

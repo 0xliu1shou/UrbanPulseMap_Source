@@ -1,4 +1,4 @@
-# ./backend/scraper/rss_spider.py
+# ./backend/aggregator/rss_aggregator.py
 # RSS 源爬虫脚本，调用 data_utils 以从 RSS 新闻源爬取新闻数据
 
 
@@ -10,7 +10,7 @@ from datetime import datetime
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 import logging
-from backend.scraper.utils.data_utils import process_rss_feed  # 直接调用已封装的处理函数
+from backend.aggregator.utils.data_utils import process_rss_feed  # 直接调用已封装的处理函数
 
 # 定义 RSS 源及其对应的 source 标识符
 RSS_SOURCES = {
@@ -18,7 +18,8 @@ RSS_SOURCES = {
     "https://observador.pt/feed/": "ob",              # Observador RSS源
     "https://www.rtp.pt/noticias/rss": "rtp",         # RTP RSS源
     "https://www.record.pt/rss": "rc",               # Record RSS源
-    "https://www.cmjornal.pt/rss": "cm"              # Correio da Manhã RSS源
+    "https://www.cmjornal.pt/rss": "cm",              # Correio da Manhã RSS源
+    "https://www.sapo.pt/RSS": "sp"                   # Sapo RSS源
 }
 
 # 日志配置，设置日志级别为 INFO

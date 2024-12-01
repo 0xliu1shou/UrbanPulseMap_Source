@@ -1,4 +1,4 @@
-# ./backend/scraper/utils/data_utils.py
+# ./backend/aggregator/utils/data_utils.py
 # 爬虫工具文件，提供爬虫工作需要的获取、解析、封装、存储等模块化方法函数，供爬虫脚本调用
 
 import feedparser
@@ -114,25 +114,25 @@ def process_rss_feed(url, source, batch_id=None):
     # 获取 RSS 数据
     raw_feed = fetch_rss_feed(url)
     if raw_feed:
-        store_logs(f"Successfully fetched RSS feed from {source}.", "INFO", "Scraper_fetch_data", batch_id)
+        store_logs(f"Successfully fetched RSS feed from {source}.", "INFO", "aggregator_fetch_data", batch_id)
     else:
-        store_logs(f"Failed to fetch RSS feed from {source}.", "ERROR", "Scraper_fetch_data", batch_id)
+        store_logs(f"Failed to fetch RSS feed from {source}.", "ERROR", "aggregator_fetch_data", batch_id)
         return
 
     # 解析 RSS 数据
     parsed_feed = parse_rss_feed(raw_feed)
     if parsed_feed:
-        store_logs(f"Successfully parsed RSS feed from {source}.", "INFO", "Scraper_parse_data", batch_id)
+        store_logs(f"Successfully parsed RSS feed from {source}.", "INFO", "aggregator_parse_data", batch_id)
     else:
-        store_logs(f"No valid RSS feed data to parse from {source}.", "WARNING", "Scraper_parse_data", batch_id)
+        store_logs(f"No valid RSS feed data to parse from {source}.", "WARNING", "aggregator_parse_data", batch_id)
         return
 
     # 封装 RSS 数据
     packaged_data = package_rss_feed(parsed_feed, source)
     if packaged_data:
-        store_logs(f"Successfully packaged {len(packaged_data)} news items from {source}.", "INFO", "Scraper_package_data", batch_id)
+        store_logs(f"Successfully packaged {len(packaged_data)} news items from {source}.", "INFO", "aggregator_package_data", batch_id)
     else:
-        store_logs(f"No entries to package from {source}.", "WARNING", "Scraper_package_data", batch_id)
+        store_logs(f"No entries to package from {source}.", "WARNING", "aggregator_package_data", batch_id)
         return
 
     # 存储新闻数据和日志
@@ -140,6 +140,6 @@ def process_rss_feed(url, source, batch_id=None):
     store_logs(
         f"Bulk operation completed for {source}: {store_results['inserted_count']} inserted, {store_results['updated_count']} updated, {store_results['skipped_count']} skipped.",
         "INFO",
-        "Scraper_store_data",
+        "aggregator_store_data",
         batch_id
     )

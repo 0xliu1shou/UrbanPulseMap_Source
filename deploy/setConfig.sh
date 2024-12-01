@@ -1,3 +1,4 @@
+#!/bin/bash
 # setConfig.sh
 
 # 请确保以 root 或具有 sudo 权限的用户执行
@@ -158,7 +159,7 @@ server {
         root /home/ubuntu/UrbanPulseMap_Source/frontend/dist;
         types { image/x-icon ico; }
         default_type image/x-icon;
-        try_files $uri =404;
+        try_files \$uri =404;
     }
 
     # 配置前端路由

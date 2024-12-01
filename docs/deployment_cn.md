@@ -1,5 +1,17 @@
-# 部署步骤
+# UrbanPulseMap 部署指南
+## 部署前的准备工作
 
+1.	注册域名并解析到服务器 IP 地址
+请确保您已注册域名，并正确将域名解析指向服务器的 IP 地址。
+
+2.	开启服务器防火墙的必要端口
+请确保服务器防火墙允许以下端口：
+•	27017（MongoDB）
+•	5000（后端服务 API）
+•	80（HTTP）
+•	443（HTTPS）
+
+# 具体步骤和命令：
 ## 1. 克隆代码仓库
 
 ```bash
@@ -32,7 +44,7 @@ chmod +x setEnvironment.sh
 sudo ./setEnvironment.sh
 ```
 
-### 6. 部署 ssl 证书
+## 6. 部署 ssl 证书
 ```bash
 chmod +x setSsl.sh
 sudo ./setSsl.sh
@@ -45,21 +57,27 @@ chmod +x setConfig.sh
 sudo ./setConfig.sh
 ```
 
-### 8. 创建前端静态文件
-```bash
-chmod +x setWebsite.sh
-sudo ./setWebsite.sh
-```
-
-## 9. 设置文件符上限
+## 8. 设置文件符上限
 ### MongoDB 需要大量文件描述符用于管理连接和文件。如果文件描述符上限过低，可能会导致 MongoDB 连接中断。请确保系统文件描述符的限制至少为 64000。
 ```bash
 sudo ./setFdLimit.sh
 ```
 ### 重启服务器
 
+## 9. 创建前端静态文件
+```bash
+chmod +x setWebsite.sh
+sudo ./setWebsite.sh
+```
+
 ## 10. 验证部署情况
 ```bash
 cd UrbanPulseMap_Source/deploy
 sudo bash ./check.sh
 ```
+
+# 注意事项：
+## 提升 MongoDB 访问安全性
+•	如果有安全需求，可以自行更改 MongoDB 的默认监听端口。
+•	配置防火墙，仅允许特定 IP 地址访问 MongoDB 的公网端口。
+

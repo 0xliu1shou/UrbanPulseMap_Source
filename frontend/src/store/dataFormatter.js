@@ -44,6 +44,7 @@ const DataFormatter = {
             rtp: "RTP",
             rc: "Record",
             cm: "Correio da Manhã",
+            sp: "Sapo",
         };
         return sourceMap[source] || "Desconhecido"; // 如果未找到对应简写，返回默认值
     },

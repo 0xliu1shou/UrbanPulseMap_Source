@@ -14,7 +14,7 @@ def run_task(command, description):
     """
     运行单个任务，并记录详细日志
     参数:
-        command (str): 系统命令（例如: "python3 rss_spider.py"）。
+        command (str): 系统命令（例如: "python3 rss_aggregator.py"）。
         description (str): 任务描述，用于日志记录。
     """
     try:
@@ -45,11 +45,11 @@ if __name__ == "__main__":
         print(f"[{datetime.now()}] INFO: Scheduler is starting a new cycle.")
         
         # 构建正确的脚本路径
-        rss_spider_path = os.path.join(BASE_DIR, "../scraper/rss_spider.py")
+        rss_aggregator_path = os.path.join(BASE_DIR, "../aggregator/rss_aggregator.py")
         nlp_path = os.path.join(BASE_DIR, "../nlp/nlp.py")
 
         # 执行爬虫任务
-        run_task(f"python3 {rss_spider_path}", "Run RSS Spider")
+        run_task(f"python3 {rss_aggregator_path}", "Run RSS Aggregator")
         
         # 执行 NLP 任务
         run_task(f"python3 {nlp_path}", "Run NLP Analysis")

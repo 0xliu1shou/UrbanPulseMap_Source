@@ -1,4 +1,5 @@
 #!/bin/bash
+# setMongodb.sh
 
 # 设置 MongoDB 服务
 echo "配置 MongoDB..."
@@ -17,7 +18,7 @@ if ! command -v mongod &>/dev/null; then
 
     # 添加 MongoDB 官方仓库
     echo "添加 MongoDB 官方软件源..."
-    OS_VERSION=$(lsb_release -cs)  # 动态获取系统版本
+    OS_VERSION=“jammy”
     echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-org-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu $OS_VERSION/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 
     # 更新系统包缓存
