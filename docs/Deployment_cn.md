@@ -67,13 +67,13 @@ sudo ./setFdLimit.sh
 
 ## 9. 创建前端静态文件
 ```bash
+cd UrbanPulseMap_Source/deploy
 chmod +x setWebsite.sh
 sudo ./setWebsite.sh
 ```
 
 ## 10. 验证部署情况
 ```bash
-cd UrbanPulseMap_Source/deploy
 sudo bash ./check.sh
 ```
 
