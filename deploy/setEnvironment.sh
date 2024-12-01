@@ -1,3 +1,4 @@
+#!/bin/bash
 # setEnvironment.sh
 
 # 请确保以 root 或具有 sudo 权限的用户执行

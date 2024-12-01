@@ -1,3 +1,4 @@
+#!/bin/bash
 # setWebsite.sh
 
 # 配置 Nginx 静态网页文件
@@ -27,6 +28,16 @@ if [ ! -d "$PROJECT_DIR" ]; then
     exit 1
 fi
 
+# 设置父目录和项目目录权限
+HOME_DIR=$(dirname "$PROJECT_DIR")
+
+echo "设置 /home/ubuntu 目录的访问权限..."
+sudo chmod o+x "$HOME_DIR" && sudo chown "$USER:www-data" "$HOME_DIR" && sudo chmod 750 "$HOME_DIR"
+if [ $? -ne 0 ]; then
+    echo "设置 /home/ubuntu 的权限失败，请检查权限或路径。"
+    exit 1
+fi
+
 # 确保 Nginx 和当前用户对项目根目录拥有全部权限
 echo "设置项目根目录权限..."
 NGINX_USER="www-data"
@@ -43,20 +54,27 @@ else
     exit 1
 fi
 
-echo "配置 Nginx 静态网页文件..."
-# 创建 Nginx 静态网页文件
-if npm run build; then
-    echo "前端构建完成，静态文件已生成。"
+# 在前端项目目录下执行 npm run build
+FRONTEND_DIR="$PROJECT_DIR/frontend"
+
+echo "切换到前端目录: $FRONTEND_DIR"
+if [ -d "$FRONTEND_DIR" ]; then
+    cd "$FRONTEND_DIR" || { echo "切换到前端目录失败，请检查目录路径。"; exit 1; }
+    echo "正在构建前端项目..."
+    if npm run build; then
+        echo "前端构建完成，静态文件已生成。"
+    else
+        echo "npm run build 失败，请检查前端代码或配置。"
+        exit 1
+    fi
 else
-    echo "npm run build 失败，请检查前端代码或配置。"
+    echo "前端目录不存在: $FRONTEND_DIR，请检查项目目录路径。"
     exit 1
 fi
-
 
 # 脚本完成
 echo "前端服务部署完成！"
 echo "----------------------------------------"
 echo "请在开始项目前启动后端服务脚本 scheduler.py 和 app.py"
-echo "前端页面: 请访问 https://$DOMAIN 确认服务是否正常运行。"
 echo "----------------------------------------"
 exit 0
