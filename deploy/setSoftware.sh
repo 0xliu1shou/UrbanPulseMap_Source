@@ -12,5 +12,4 @@ sudo apt-get install -y npm
 sudo apt-get install -y nodejs
 sudo apt-get install -y mongodb-org-shell
 sudo apt-get install -y screen
-sudo apt install -y nginx
 sudo apt-get update
