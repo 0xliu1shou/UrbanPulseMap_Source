@@ -111,35 +111,63 @@ def process_rss_feed(url, source, batch_id=None):
         source (str): 数据来源标识符。
         batch_id (str): 批次 ID。
     """
+    
+    log_messages = []  # 用于记录每个步骤的日志信息
+    
     # 获取 RSS 数据
     raw_feed = fetch_rss_feed(url)
     if raw_feed:
-        store_logs(f"Successfully fetched RSS feed from {source}.", "INFO", "aggregator_fetch_data", batch_id)
+        log_messages.append("Successfully fetched RSS feed.")
     else:
-        store_logs(f"Failed to fetch RSS feed from {source}.", "ERROR", "aggregator_fetch_data", batch_id)
+        log_messages.append("Failed to fetch RSS feed.")
+        store_logs(
+            f"Process summary for {source} (Batch ID: {batch_id}): " + " | ".join(log_messages),
+            "ERROR",
+            "aggregator_process_summary",
+            batch_id
+        )
         return
 
     # 解析 RSS 数据
     parsed_feed = parse_rss_feed(raw_feed)
     if parsed_feed:
-        store_logs(f"Successfully parsed RSS feed from {source}.", "INFO", "aggregator_parse_data", batch_id)
+        log_messages.append("Successfully parsed RSS feed.")
     else:
-        store_logs(f"No valid RSS feed data to parse from {source}.", "WARNING", "aggregator_parse_data", batch_id)
+        log_messages.append("No valid RSS feed data to parse.")
+        store_logs(
+            f"Process summary for {source} (Batch ID: {batch_id}): " + " | ".join(log_messages),
+            "WARNING",
+            "aggregator_process_summary",
+            batch_id
+        )
         return
+
 
     # 封装 RSS 数据
     packaged_data = package_rss_feed(parsed_feed, source)
     if packaged_data:
-        store_logs(f"Successfully packaged {len(packaged_data)} news items from {source}.", "INFO", "aggregator_package_data", batch_id)
+        log_messages.append(f"Successfully packaged {len(packaged_data)} news items.")
     else:
-        store_logs(f"No entries to package from {source}.", "WARNING", "aggregator_package_data", batch_id)
+        log_messages.append("No entries to package.")
+        store_logs(
+            f"Process summary for {source} (Batch ID: {batch_id}): " + " | ".join(log_messages),
+            "WARNING",
+            "aggregator_process_summary",
+            batch_id
+        )
         return
 
-    # 存储新闻数据和日志
+    # 存储新闻数据
     store_results = store_news(packaged_data)
+    log_messages.append(
+        f"Bulk operation completed: {store_results['inserted_count']} inserted, "
+        f"{store_results['updated_count']} updated, {store_results['skipped_count']} skipped."
+    )
+    
+    # 写入最终总结日志
     store_logs(
-        f"Bulk operation completed for {source}: {store_results['inserted_count']} inserted, {store_results['updated_count']} updated, {store_results['skipped_count']} skipped.",
+        f"Process summary for {source} (Batch ID: {batch_id}): " + " | ".join(log_messages),
         "INFO",
-        "aggregator_store_data",
+        "aggregator_summary",
         batch_id
     )
