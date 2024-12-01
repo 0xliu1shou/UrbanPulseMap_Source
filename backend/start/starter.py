@@ -1,4 +1,4 @@
-# ./backend/scheduler/scheduler.py
+# ./backend/start/starter.py
 # 定时调度文件，每半小时调度执行一次爬虫和nlp数据处理脚本
 
 import subprocess
@@ -42,7 +42,7 @@ def run_task(command, description):
 
 if __name__ == "__main__":
     while True:
-        print(f"[{datetime.now()}] INFO: Scheduler is starting a new cycle.")
+        print(f"[{datetime.now()}] INFO: Starter is starting a new cycle.")
         
         # 构建正确的脚本路径
         rss_aggregator_path = os.path.join(BASE_DIR, "../aggregator/rss_aggregator.py")
@@ -54,6 +54,6 @@ if __name__ == "__main__":
         # 执行 NLP 任务
         run_task(f"python3 {nlp_path}", "Run NLP Analysis")
 
-        print(f"[{datetime.now()}] INFO: Scheduler is sleeping for 30 minutes.")
-        # 休眠半小时
-        time.sleep(1800)
+        print(f"[{datetime.now()}] INFO: Starter is sleeping for 30 minutes.")
+        # 休眠2小时
+        time.sleep(7200) 
