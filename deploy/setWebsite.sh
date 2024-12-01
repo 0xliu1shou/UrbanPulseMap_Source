@@ -38,13 +38,29 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# 确保 Nginx 和当前用户对项目根目录拥有全部权限
+# 确保 Nginx 和当前用户对项目根目录拥有适当权限
 echo "设置项目根目录权限..."
 NGINX_USER="www-data"
 
-# 确保项目根目录及子目录对 Nginx 和当前用户开放权限
-chown -R "$USER:$NGINX_USER" "$PROJECT_DIR"
-chmod -R 775 "$PROJECT_DIR"
+# 针对虚拟环境和前端构建目录调整权限
+BACKEND_ENV="$PROJECT_DIR/backend/env"
+FRONTEND_DIST="$PROJECT_DIR/frontend/dist"
+
+# 1. 设置虚拟环境的权限（完全归属当前用户）
+if [ -d "$BACKEND_ENV" ]; then
+    sudo chown -R "$USER:$USER" "$BACKEND_ENV"
+    sudo chmod -R 700 "$BACKEND_ENV"
+fi
+
+# 2. 设置前端构建目录权限（Nginx 可读）
+if [ -d "$FRONTEND_DIST" ]; then
+    sudo chown -R "$USER:$NGINX_USER" "$FRONTEND_DIST"
+    sudo chmod -R 750 "$FRONTEND_DIST"
+fi
+
+# 3. 设置项目根目录和子目录的权限（默认可读写执行）
+sudo chown -R "$USER:$NGINX_USER" "$PROJECT_DIR"
+sudo chmod -R 775 "$PROJECT_DIR"
 
 # 确认权限设置
 if [ $? -eq 0 ]; then
