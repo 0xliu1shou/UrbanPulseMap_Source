@@ -28,47 +28,44 @@ if [ ! -d "$PROJECT_DIR" ]; then
     exit 1
 fi
 
-# 设置父目录和项目目录权限
-HOME_DIR=$(dirname "$PROJECT_DIR")
+# 确保 /home/ubuntu 权限正常
+echo "设置 /home/ubuntu 目录权限..."
+sudo chown ubuntu:www-data /home/ubuntu
+sudo chmod 750 /home/ubuntu
 
-echo "设置 /home/ubuntu 目录的访问权限..."
-sudo chmod o+x "$HOME_DIR" && sudo chown "$USER:www-data" "$HOME_DIR" && sudo chmod 750 "$HOME_DIR"
-if [ $? -ne 0 ]; then
-    echo "设置 /home/ubuntu 的权限失败，请检查权限或路径。"
-    exit 1
-fi
-
-# 确保 Nginx 和当前用户对项目根目录拥有适当权限
-echo "设置项目根目录权限..."
+# 配置项目目录权限
 NGINX_USER="www-data"
 
-# 针对虚拟环境和前端构建目录调整权限
-BACKEND_ENV="$PROJECT_DIR/backend/env"
-FRONTEND_DIST="$PROJECT_DIR/frontend/dist"
+# 1. 设置项目根目录权限
+echo "设置项目根目录权限..."
+sudo chown -R ubuntu:www-data "$PROJECT_DIR"
+sudo chmod -R 775 "$PROJECT_DIR"
 
-# 1. 设置虚拟环境的权限（完全归属当前用户）
-if [ -d "$BACKEND_ENV" ]; then
-    sudo chown -R "$USER:$USER" "$BACKEND_ENV"
-    sudo chmod -R 700 "$BACKEND_ENV"
+# 2. 配置后端目录权限（适用于虚拟环境）
+BACKEND="$PROJECT_DIR/backend"
+if [ -d "$BACKEND" ]; then
+    echo "配置后端目录权限..."
+    sudo chown -R ubuntu:ubuntu "$BACKEND"
+    sudo chmod -R 700 "$BACKEND"
 fi
 
-# 2. 设置前端构建目录权限（Nginx 可读）
+# 3. 配置前端构建目录权限
+FRONTEND_DIST="$PROJECT_DIR/frontend/dist"
 if [ -d "$FRONTEND_DIST" ]; then
-    sudo chown -R "$USER:$NGINX_USER" "$FRONTEND_DIST"
+    echo "配置前端构建目录权限..."
+    sudo chown -R ubuntu:www-data "$FRONTEND_DIST"
     sudo chmod -R 750 "$FRONTEND_DIST"
 fi
 
-# 3. 设置项目根目录和子目录的权限（默认可读写执行）
-sudo chown -R "$USER:$NGINX_USER" "$PROJECT_DIR"
-sudo chmod -R 775 "$PROJECT_DIR"
-
 # 确认权限设置
 if [ $? -eq 0 ]; then
-    echo "权限设置完成：$PROJECT_DIR 目录现在对 $USER 和 $NGINX_USER 开放。"
+    echo "权限设置完成：$PROJECT_DIR 目录现在对 ubuntu 和 $NGINX_USER 开放。"
 else
     echo "权限设置失败，请检查目录路径和用户配置。"
     exit 1
 fi
+
+echo "权限配置完成！"
 
 # 在前端项目目录下执行 npm run build
 FRONTEND_DIR="$PROJECT_DIR/frontend"
