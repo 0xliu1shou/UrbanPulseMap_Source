@@ -1,4 +1,4 @@
-# ./backend/start/starter.py
+# ./backend/backservice/starter.py
 # 定时调度文件，每半小时调度执行一次爬虫和nlp数据处理脚本
 
 import subprocess
@@ -54,6 +54,6 @@ if __name__ == "__main__":
         # 执行 NLP 任务
         run_task(f"python3 {nlp_path}", "Run NLP Analysis")
 
-        print(f"[{datetime.now()}] INFO: Starter is sleeping for 30 minutes.")
+        print(f"[{datetime.now()}] INFO: Starter is sleeping for 120 minutes.")
         # 休眠2小时
         time.sleep(7200) 
