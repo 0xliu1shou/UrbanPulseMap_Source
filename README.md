@@ -70,12 +70,11 @@ _Detailed data flow and workflow diagrams will be included in future updates._
 ---
 
 <div style="background-color: #3b3b3b; padding: 20px;">
-
 <!-- 项目 Logo -->
 <p align="center">
   <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.png" alt="Urban Pulse Map Logo Black" width="600">
 </p>
-
+</div>
 ---
 
 <p align="center">
@@ -137,5 +136,3 @@ _详细数据流与工作流程图将在未来版本更新中提供。_
   Urban Pulse Map 为非商业项目，具体免责声明请查看文档。
 - **电子邮件**  
   [info@upmap.cc](mailto:info@upmap.cc)
-
-  </div>
