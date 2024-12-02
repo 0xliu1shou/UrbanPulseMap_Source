@@ -1,6 +1,6 @@
 <!-- 项目 Logo / Project Logo -->
 <p align="center">
-  <img src="./docs/assets/UrbanPulseMap_LOGO.png" alt="Urban Pulse Map Logo" width="600">
+  <img src="./docs/assets/UrbanPulseMap_LOGO.png" alt="Urban Pulse Map Logo" width="800">
 </p>
 
 ---
@@ -71,13 +71,13 @@ _Detailed data flow and workflow diagrams will be included in future updates._
   For any questions or suggestions, feel free to reach out to us via email, and we will respond promptly.
 
 - **[Demo: upmap.cc](https://upmap.cc)**
-  Click to access the project demo.
-  **Note:** This demo is for conceptual display purposes only and not intended for commercial use.
+  - Click to access the project demo.
+  - **Note:** This demo is for conceptual display purposes only and not intended for commercial use.
 ---
 
 <!-- 项目 Logo -->
 <p align="center">
-  <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.svg" alt="Urban Pulse Map Logo Black" width="600">
+  <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.svg" alt="Urban Pulse Map Logo Black" width="800">
 </p>
 
 ---
@@ -145,5 +145,5 @@ _详细数据流与工作流程图将在未来版本更新中提供。_
 - **[电子邮件：info@upmap.cc](mailto:info@upmap.cc)**  
   如果您有任何问题或建议，欢迎通过电子邮件与我们联系，我们将尽快回复。
 - **[概念演示：upmap.cc](https://upmap.cc)**
-  点击访问项目在线演示。
-  **注意：**此 Demo 仅为概念演示，非商业产品。
+  - 点击访问项目在线演示。
+  - **注意**：此 Demo 仅为概念演示，非商业产品。
