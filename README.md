@@ -1,7 +1,6 @@
-# Urban Pulse Map  
 <!-- 项目 Logo / Project Logo -->
 <p align="center">
-  <img src="./docs/assets/UrbanPulseMap_LOGO.png" alt="Urban Pulse Map Logo" width="200">
+  <img src="./docs/assets/UrbanPulseMap_LOGO.png" alt="Urban Pulse Map Logo" width="800">
 </p>
 
 ---
@@ -80,11 +79,9 @@ _Detailed data flow and workflow diagrams will be included in future updates._
 ---
 
 ---
-
-## Urban Pulse Map  
 <!-- 项目 Logo -->
 <p align="center">
-  <img src="./docs/assets/UrbanPulseMap_LOGO_black.png" alt="Urban Pulse Map Logo Black" width="200">
+  <img src="./docs/assets/UrbanPulseMap_LOGO_black.png" alt="Urban Pulse Map Logo Black" width="800">
 </p>
 
 ---
