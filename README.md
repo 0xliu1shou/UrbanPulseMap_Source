@@ -18,6 +18,9 @@
   <a href="mailto:info@upmap.cc">
     <img src="https://img.shields.io/badge/Email-Contact%20Us-blue?style=for-the-badge" alt="Email (Contact Us)">
   </a>
+  <a href="https://upmap.cc" target="_blank">
+    <img src="https://img.shields.io/badge/Demo-Upmap.cc-purple?style=for-the-badge" alt="Project Demo">
+  </a>
 </p>
 
 ---
@@ -41,14 +44,14 @@ The project is fully open-source, dedicated to education and research, and explo
 ## Architecture & Technology Stack
 Urban Pulse Map adopts a modular architecture to ensure flexibility and scalability:
 
-| Module              | Technology            | Description                                                |
-|---------------------|-----------------------|------------------------------------------------------------|
-| **Data Acquisition**| Python                | Standardized RSS aggregation engine to integrate news sources |
-| **Data Processing** | spaCy                 | NLP-based analysis for extracting geographical information  |
-| **Data Storage**    | MongoDB               | Store processed news data and operation logs                |
-| **Data API Layer**  | Flask (WSGI)          | Provide RESTful API endpoints, planned to support `WSGI` for optimization |
-| **Data Presentation**| Vue.js, Vite, Nginx   | Provide a demo webpage for technical visualization         |
-| **Task Scheduler**  | Python (cron)         | Manage data acquisition and processing, planned to support `cron` |
+| Module                    | Technology            | Description                                                               |
+|---------------------------|-----------------------|---------------------------------------------------------------------------|
+| **Data Acquisition Layer**| Python                | Standardized RSS aggregation engine to integrate news sources             |
+| **Data Processing Layer** | spaCy                 | NLP-based analysis for extracting geographical information                |
+| **Data Storage Layer**    | MongoDB               | Store processed news data and operation logs                              |
+| **API Layer**             | Flask (WSGI)          | Provide RESTful API endpoints, planned to support `WSGI` for optimization |
+| **Data Presentation**     | Vue.js, Vite, Nginx   | Provide a demo webpage for technical visualization                        |
+| **Tasks Runner**          | Python (cron)         | Manage data acquisition and processing, planned to support `cron`         |
 
 ---
 
@@ -64,17 +67,19 @@ _Detailed data flow and workflow diagrams will be included in future updates._
 - **[Disclaimer](./docs/Disclaimer_en.md)**  
   Urban Pulse Map is a non-commercial project. Please see the disclaimer for details.  
 
-- **Email**  
-  [info@upmap.cc](mailto:info@upmap.cc)
+- **[Email: info@upmap.cc](mailto:info@upmap.cc)**  
+  For any questions or suggestions, feel free to reach out to us via email, and we will respond promptly.
 
+- **[Demo: upmap.cc](https://upmap.cc)**
+  Click to access the project demo.
+  **Note:** This demo is for conceptual display purposes only and not intended for commercial use.
 ---
 
-<div style="background-color: #3b3b3b; padding: 20px;">
 <!-- 项目 Logo -->
 <p align="center">
-  <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.png" alt="Urban Pulse Map Logo Black" width="600">
+  <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.svg" alt="Urban Pulse Map Logo Black" width="600">
 </p>
-</div>
+
 ---
 
 <p align="center">
@@ -85,10 +90,13 @@ _Detailed data flow and workflow diagrams will be included in future updates._
     <img src="https://img.shields.io/github/license/0xliu1shou/UrbanPulseMap_Source?style=for-the-badge" alt="许可证">
   </a>
   <a href="./docs/Disclaimer_cn.md" target="_blank">
-    <img src="https://img.shields.io/badge/免责声明-%E5%85%AC告-orange?style=for-the-badge" alt="免责声明">
+    <img src="https://img.shields.io/badge/免责声明-中文-orange?style=for-the-badge" alt="免责声明（中文）">
   </a>
   <a href="mailto:info@upmap.cc">
     <img src="https://img.shields.io/badge/Email-联系我们-blue?style=for-the-badge" alt="邮件联系">
+  </a>
+  <a href="https://upmap.cc" target="_blank">
+    <img src="https://img.shields.io/badge/Demo-Upmap.cc-purple?style=for-the-badge" alt="项目 Demo">
   </a>
 </p>
 
@@ -134,5 +142,8 @@ _详细数据流与工作流程图将在未来版本更新中提供。_
   项目采用 GPL-3.0 License，详细请参阅文件。
 - **[免责声明（中文）](./docs/Disclaimer_cn.md)**  
   Urban Pulse Map 为非商业项目，具体免责声明请查看文档。
-- **电子邮件**  
-  [info@upmap.cc](mailto:info@upmap.cc)
+- **[电子邮件：info@upmap.cc](mailto:info@upmap.cc)**  
+  如果您有任何问题或建议，欢迎通过电子邮件与我们联系，我们将尽快回复。
+- **[概念演示：upmap.cc](https://upmap.cc)**
+  点击访问项目在线演示。
+  **注意：**此 Demo 仅为概念演示，非商业产品。
