@@ -5,7 +5,6 @@
     <source srcset="./docs/assets/UrbanPulseMap_LOGO.png" media="(prefers-color-scheme: light)">
     <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.svg" alt="Urban Pulse Map Logo" width="700">
   </picture>
-  <img src="./docs/assets/UrbanPulseMap_LOGO.png" alt="Urban Pulse Map Logo" width="800">
 </p>
 
 ---
