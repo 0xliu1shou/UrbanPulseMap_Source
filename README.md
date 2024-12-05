@@ -1,5 +1,10 @@
 <!-- 项目 Logo / Project Logo -->
 <p align="center">
+  <picture>
+    <source srcset="./docs/assets/UrbanPulseMap_LOGO_reverse_color.png" media="(prefers-color-scheme: dark)">
+    <source srcset="./docs/assets/UrbanPulseMap_LOGO.png" media="(prefers-color-scheme: light)">
+    <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.svg" alt="Urban Pulse Map Logo" width="700">
+  </picture>
   <img src="./docs/assets/UrbanPulseMap_LOGO.png" alt="Urban Pulse Map Logo" width="800">
 </p>
 
@@ -50,7 +55,7 @@ Urban Pulse Map adopts a modular architecture to ensure flexibility and scalabil
 | **Data Processing Layer** | spaCy                 | NLP-based analysis for extracting geographical information                |
 | **Data Storage Layer**    | MongoDB               | Store processed news data and operation logs                              |
 | **API Layer**             | Flask (WSGI)          | Provide RESTful API endpoints, planned to support `WSGI` for optimization |
-| **Data Presentation**     | Vue.js, Vite, Nginx   | Provide a demo webpage for technical visualization                        |
+| **Outcomes Presentation** | Vue.js, Vite, Nginx   | Provide a demo webpage for technical visualization                        |
 | **Tasks Runner**          | Python (cron)         | Manage data acquisition and processing, planned to support `cron`         |
 
 ---
@@ -67,19 +72,12 @@ _Detailed data flow and workflow diagrams will be included in future updates._
 - **[Disclaimer](./docs/Disclaimer_en.md)**  
   Urban Pulse Map is a non-commercial project. Please see the disclaimer for details.  
 
-- **[Email: info@upmap.cc](mailto:info@upmap.cc)**  
+- **Email: [info@upmap.cc](mailto:info@upmap.cc)**  
   For any questions or suggestions, feel free to reach out to us via email, and we will respond promptly.
-
+  
 - **[Demo: upmap.cc](https://upmap.cc)**
   - Click to access the project demo.
   - **Note:** This demo is for conceptual display purposes only and not intended for commercial use.
----
-
-<!-- 项目 Logo -->
-<p align="center">
-  <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.svg" alt="Urban Pulse Map Logo Black" width="800">
-</p>
-
 ---
 
 <p align="center">
@@ -142,7 +140,7 @@ _详细数据流与工作流程图将在未来版本更新中提供。_
   项目采用 GPL-3.0 License，详细请参阅文件。
 - **[免责声明（中文）](./docs/Disclaimer_cn.md)**  
   Urban Pulse Map 为非商业项目，具体免责声明请查看文档。
-- **[电子邮件：info@upmap.cc](mailto:info@upmap.cc)**  
+- **电子邮件：[info@upmap.cc](mailto:info@upmap.cc)**  
   如果您有任何问题或建议，欢迎通过电子邮件与我们联系，我们将尽快回复。
 - **[概念演示：upmap.cc](https://upmap.cc)**
   - 点击访问项目在线演示。

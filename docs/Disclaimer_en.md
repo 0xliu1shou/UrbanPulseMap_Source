@@ -1,86 +1,96 @@
-# Disclaimer
-
-### UrbanPulseMap is an **open-source project** on GitHub that leverages natural language processing (NLP) and machine learning technologies. It is dedicated to educational and research purposes, aiming to explore the reasonable use of public news data and innovative technological applications. This project is strictly a **non-commercial technical demonstration**. The following are the detailed disclaimers related to the project:
-
----
-
-## 1. Non-Commercial Purpose
-- This project is created strictly for non-profit purposes and does not involve any advertising or commercial use.
-- The content is entirely open-source and free, serving only as a demonstration of technical concepts.
+# **Disclaimer**
+- **Urban Pulse Map** is a **GitHub open-source project** based on Natural Language Processing (NLP) and Machine Learning (ML) technologies, focusing on educational and research purposes. It aims to explore the fair use of public news data and the application of innovative technologies.
+- This project is solely a tool for technical concept validation and is not a commercial product or service.
+- The following disclaimer outlines the terms associated with this project. Any individual browsing the project Demo or accessing other project-related content should carefully read and acknowledge the following terms.
 
 ---
 
-## 2. Legal and Compliance Statements
-### Compliance with RSS Data Use
-- This project strictly adheres to international RSS protocols, industry practices, and **Article 75 of the Portuguese Copyright and Related Rights Code**, which outlines "fair use" principles for non-commercial educational and research purposes.
-- The project’s **standardized RSS aggregator** strictly follows the rules outlined in the robots.txt files of the target websites, ensuring that restricted or non-public data is not accessed.
+## **1. Nature of the Project**
+### **1.1 Non-Commercial Nature**
+- This project is a non-commercial open-source initiative, entirely free of charge, involving no advertisements, fees, or economic gains, and is not used for any profit-driven purposes.
+- All functionalities of this project are designed to validate the accuracy of Natural Language Processing and Machine Learning algorithms, particularly in analyzing the geographical information of news events.
 
-### Compliance with Database Rights
-- This project complies with the **EU Database Directive (96/9/EC)** and relevant Portuguese laws, avoiding any large-scale extraction or unreasonable use of databases.
-
-### Compliance with GDPR
-- The project fully adheres to the **General Data Protection Regulation (GDPR)**. It does not collect, store, or process any personal data. Users interacting with the demo face no privacy risks.
+### **1.2 Educational and Research Purposes**
+- The project is dedicated to technical learning and research, aiming to explore the integration of news events with geographical data for visualization.
+- All project content is shared in a non-commercial manner and is intended for academic, educational, or public benefit purposes.
 
 ---
 
-## 3. Copyright of Displayed Content
-The copyright of all news content displayed in the project (including titles, summaries, and other information) belongs to the respective news publishers. The project does not infringe on the original copyrights of the news content. We follow these principles in using news data:
+## **2. Legal and Compliance Statements**
+### **2.1 Lawful Use of Public RSS Data**
+- This project strictly adheres to international RSS standards, industry practices, and Article 75 of the Portuguese Copyright and Related Rights Code regarding "fair use." It is limited to non-commercial, educational, and research-oriented technical demonstrations.
+- The tools used to process data (e.g., standardized RSS aggregators) fully comply with the `robots.txt` rules of target websites, avoiding access to restricted or non-public data.
+- The RSS data utilized in this project is exclusively used for validating Natural Language Processing and Machine Learning algorithms and does not constitute redistribution or secondary use of the original data.
 
-### Source Compliance
-- News data is collected solely from publicly accessible RSS feeds provided by digital media platforms, compliant with standard RSS usage.
-- The project does not access or extract any exclusive content requiring subscriptions or payments, ensuring that the economic interests of media outlets are not infringed upon.
-- The project does not access any pages beyond the public RSS feed links, avoiding undue performance burdens on the platforms.
+### **2.2 Database Rights Compliance**
+- The project complies with the EU Database Directive (Directive 96/9/EC) and relevant Portuguese legislation, avoiding large-scale extraction of database content.
+- Data usage remains within reasonable bounds, aligning with the database "fair use" doctrine, and does not involve the complete extraction or redistribution of database content.
+- The project does not access pages or databases outside of publicly available RSS links, ensuring no performance burden on target websites.
 
-### Limited Use
-- The project does not redistribute entire RSS feed content but performs limited analysis, organization, and summarization of news data. It uses approximately 100 news items per day with explicit geographical information to ensure the reasonableness of data usage.
-- Only selected fields such as titles, summaries, publication dates, and links are extracted from the RSS feeds. Full-text content is not used.
-
-### Attribution to Sources
-- All news data used in the project is attributed to its source, with direct links to the original articles provided.
-- Users are encouraged to visit the original media platforms directly through the demo, potentially increasing traffic and strengthening recognition of the media’s content.
-
-### Fidelity in Display
-- The project serves as a technical extension of publicly available information, not a replacement for the original content.
-- Data fields are displayed without alteration, except for technical formatting adjustments (e.g., removal of CDATA wrappers).
-- No subjective commentary is added to the media content. The project visualizes news events to avoid infringing on media rights.
+### **2.3 GDPR Compliance**
+- This project strictly complies with the General Data Protection Regulation (GDPR), refraining from collecting, storing, or processing any personal data of visitors.
 
 ---
 
-## 4. Accuracy of News Content
-The project does not guarantee the accuracy, completeness, or timeliness of the displayed news content. Users are responsible for verifying its authenticity. This project provides technical displays only and does not constitute legal, financial, or other forms of advice.
+## **3. Content Copyright Statement**
+### **3.1 Ownership of Copyright**
+- The copyright of all data used in this project belongs to the respective news publishers.
+- The front-end demonstration (Demo) of the project is a technical validation tool that visualizes algorithms analyzing geographical information in news content. It is not a commercial product or service.
+- The Demo serves as a technical extension of publicly available information and does not replace or redistribute original content. The project does not infringe upon the copyrights of the original news content.
+
+### **3.2 Source Legitimacy**
+- The news data used in the project is sourced exclusively from publicly available RSS feeds adhering to standard RSS usage norms.
+- The project does not access or utilize any subscription-based, paid, or restricted content, ensuring legal and legitimate data sources while avoiding any adverse impact on the economic interests of news publishers.
+
+### **3.3 Limited Use**
+- The project does not redistribute complete RSS data in any form. Data usage is restricted to analysis, processing, and displaying limited fields (e.g., title, summary, publication date, and link), without utilizing the full content of the news.
+- The project plans to selectively use an average of 20 news items per publicly available RSS source daily, focusing on those containing explicit geographical information to validate algorithmic performance.
+
+### **3.4 Attribution of Sources**
+- All used news data is attributed to the original media outlet, with direct links provided to the original articles.
+- The project encourages potential visitors to access the original media platforms via these links, thereby generating traffic and enhancing public recognition of the content source.
+
+### **3.5 Original Presentation**
+- The data fields used in the Demo are preserved in their original format, with only technical wrappers like CDATA removed for clarity.
+- The project does not alter or comment on the content of the news, ensuring no infringement on the rights of the data sources.
 
 ---
 
-## 5. Protection of Privacy and Reputation
-The project does not actively process, store, or display data involving personal privacy. All displayed content originates from public news data. The project disclaims any responsibility for reputation-related issues arising from news content.
+## **4. Content Accuracy Disclaimer**
+- The project does not guarantee the accuracy, completeness, or timeliness of the news data displayed. The Demo is for reference only and does not constitute any legal, financial, or other professional advice.
+- Visitors should independently assess and verify the authenticity of the displayed content and its implications.
 
 ---
 
-## 6. Algorithmic and Analytical Results
-The machine learning models used in this project (e.g., classification and geolocation extraction) may have technical limitations or biases. The classification results are for reference only and do not constitute authoritative analysis or legal grounds.
+## **5. Privacy and Defamation**
+### **5.1 Privacy Protection**
+- The project does not process, store, or display any information involving visitors' personal data.
+
+### **5.2 Defamation**
+- The project displays content derived from publicly available news and is not responsible for any defamation issues arising from the news content.
+- Any defamation disputes should be directly addressed with the relevant news publishers.
 
 ---
 
-## 7. Effectiveness of this Disclaimer
-All content and functions of this project are provided "as is," with no guarantees or warranties, express or implied, including but not limited to warranties of merchantability or fitness for a particular purpose. The project and its developers disclaim liability for any direct or indirect damages arising from the use of this project.
+## **6. Algorithm and Results Disclaimer**
+- The machine learning algorithms and models (e.g., news classification and geographical information extraction) used in this project may have limitations or biases. Results are for reference only and do not constitute authoritative conclusions or legal evidence.
 
 ---
 
-## 8. Developer Liability
-The developers of this project are not responsible for any direct or indirect consequences resulting from the use of the project code or displayed content. Users are responsible for ensuring their usage complies with applicable laws and regulations.
+## **7. Limitation of Liability**
+- All functionalities and content of this project are based on existing technology and do not provide any explicit or implicit guarantees, including but not limited to merchantability or fitness for a particular purpose.
+- The developers of this project bear no liability for any direct or indirect consequences resulting from the use of project code, content, or features, including but not limited to economic losses, data loss, or business interruptions.
+- Visitors accessing the project are responsible for ensuring their actions comply with applicable laws and regulations.
 
 ---
 
-## 9. Contact Information
-If you have any questions or concerns about the content or functionality of this project, please contact us via our GitHub page. We will address your concerns promptly.
+## **8. Additional Statements**
+- This project strictly commits to not infringing on the copyright of any news media. If RSS data providers believe that this project's use poses potential issues or that any displayed content affects their rights, please contact us immediately. We will promptly adjust or cease the use of the relevant content.
+- We acknowledge the significant value that news media bring to society by providing high-quality information. News media serve as both a critical source of public information and an essential foundation for our technological exploration. We express our deep respect and aim to enhance the social impact of news dissemination through technological research.
 
 ---
 
-## **Special Statement**
-UrbanPulseMap is strictly a **technical demonstration and knowledge-sharing project** on GitHub. Community members are encouraged to learn, improve, and use the code. However, all usage must comply with local laws and regulations, particularly those concerning data scraping, copyright, privacy, and database rights.
+## **9. Contact Us**
+If you have any questions or concerns regarding the project's content, features, or usage, please contact us via email at **[info@upmap.cc](mailto:info@upmap.cc)**. We will respond promptly to investigate and address the issue.
 
 ---
-
-## Additional Notes
-- We are committed to respecting the copyrights of media organizations. If any RSS feed provider believes this project’s usage violates their policies or affects their rights, or if you feel the project content involves your rights, please contact us immediately. We will promptly adjust or cease using the respective RSS feed.
-- We recognize the immense value of media organizations in providing high-quality news content. Public RSS feeds serve as an important resource for our technical exploration. We express our sincere respect for this and aim to enhance the societal impact of news dissemination through technological innovation.
