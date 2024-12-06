@@ -2,4 +2,4 @@
 
 - [Home](./README.md)
 - [License](./LICENSE)
-- [Disclaimer](./assetes/docs/Disclaimer_en.md)
+- [Disclaimer](./docs/Disclaimer_en.md)

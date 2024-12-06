@@ -16,7 +16,7 @@
   <a href="./LICENSE" target="_blank">
     <img src="https://img.shields.io/github/license/0xliu1shou/UrbanPulseMap_Source?style=for-the-badge" alt="License">
   </a>
-  <a href="./docs/Disclaimer_en.md" target="_blank">
+  <a href="./assets/docs/Disclaimer_en.md" target="_blank">
     <img src="https://img.shields.io/badge/Disclaimer-English-orange?style=for-the-badge" alt="Disclaimer (English)">
   </a>
   <a href="mailto:info@upmap.cc">
@@ -68,7 +68,7 @@ _Detailed data flow and workflow diagrams will be included in future updates._
 - **[License](./LICENSE)**  
   The project is licensed under GPL-3.0 License.  
 
-- **[Disclaimer](./docs/Disclaimer_en.md)**  
+- **[Disclaimer](./assets/docs/Disclaimer_en.md)**  
   Urban Pulse Map is a non-commercial project. Please see the disclaimer for details.  
 
 - **Email: [info@upmap.cc](mailto:info@upmap.cc)**  
@@ -86,7 +86,7 @@ _Detailed data flow and workflow diagrams will be included in future updates._
   <a href="./LICENSE" target="_blank">
     <img src="https://img.shields.io/github/license/0xliu1shou/UrbanPulseMap_Source?style=for-the-badge" alt="许可证">
   </a>
-  <a href="./docs/Disclaimer_cn.md" target="_blank">
+  <a href="./assets/docs/Disclaimer_cn.md" target="_blank">
     <img src="https://img.shields.io/badge/免责声明-中文-orange?style=for-the-badge" alt="免责声明（中文）">
   </a>
   <a href="mailto:info@upmap.cc">
@@ -137,7 +137,7 @@ _详细数据流与工作流程图将在未来版本更新中提供。_
 ## 重要链接及相关文档
 - **[许可证信息](./LICENSE)**  
   项目采用 GPL-3.0 License，详细请参阅文件。
-- **[免责声明（中文）](./docs/Disclaimer_cn.md)**  
+- **[免责声明（中文）](./assets/docs/Disclaimer_cn.md)**  
   Urban Pulse Map 为非商业项目，具体免责声明请查看文档。
 - **电子邮件：[info@upmap.cc](mailto:info@upmap.cc)**  
   如果您有任何问题或建议，欢迎通过电子邮件与我们联系，我们将尽快回复。
