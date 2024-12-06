@@ -1,9 +1,9 @@
 <!-- 项目 Logo / Project Logo -->
 <p align="center">
   <picture>
-    <source srcset="./docs/assets/UrbanPulseMap_LOGO_reverse_color.png" media="(prefers-color-scheme: dark)">
-    <source srcset="./docs/assets/UrbanPulseMap_LOGO.png" media="(prefers-color-scheme: light)">
-    <img src="./docs/assets/UrbanPulseMap_LOGO_reverse_color.svg" alt="Urban Pulse Map Logo" width="700">
+    <source srcset="./docs/assets/UPMap_logo_lt_white.png" media="(prefers-color-scheme: dark)">
+    <source srcset="./docs/assets/UPMap_logo_main.svg" media="(prefers-color-scheme: light)">
+    <img src="./docs/assets/UPMap_logo_lt_black.png" alt="Urban Pulse Map Logo Lt Black" width="800">
   </picture>
 </p>
 
