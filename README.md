@@ -1,8 +1,8 @@
 <!-- 项目 Logo / Project Logo -->
 <p align="center">
   <picture>
-    <source srcset="./docs/assets/UPMap_logo_lt_white.png" media="(prefers-color-scheme: dark)">
-    <source srcset="./docs/assets/UPMap_logo_main.svg" media="(prefers-color-scheme: light)">
+    <source srcset="./docs/assets/UPMap_logo_lt_black.png" media="(prefers-color-scheme: dark)">
+    <source srcset="./docs/assets/UPMap_logo_lt_black.png" media="(prefers-color-scheme: light)">
     <img src="./docs/assets/UPMap_logo_lt_black.png" alt="Urban Pulse Map Logo Lt Black" width="800">
   </picture>
 </p>
